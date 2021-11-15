@@ -21,8 +21,8 @@ function Delete() {
         localStorage.removeItem("accessToken");
 
         logout();
-        history.push("/login");
-        window.location.reload(false);
+        /*  history.push("/login"); */
+        /* window.location.reload(false); */
       });
   }, []);
 

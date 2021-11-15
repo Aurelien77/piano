@@ -3,8 +3,11 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 //components
+
 import Home from "./pages/Home";
+import Priv from "./pages/Priv";
 import CreatePost from "./pages/CreatePost";
+import Createpostpriv from "./pages/CreatePostpriv";
 import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
@@ -12,7 +15,8 @@ import PageNotFound from "./pages/PageNotFound";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
 import Delete from "./pages/Delete";
-
+import Recherche from "./pages/Recherche";
+import Postpriv from "./pages/Postpriv";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -65,6 +69,7 @@ function App() {
                 <Link to={`/profile/${authState.id}`}>
                   {authState.username}
                 </Link>
+                <Link to={`/postpriv/${authState.id}`}>Posts Privés</Link>
               </h1>{" "}
             </div>{" "}
             <div className="deco">
@@ -81,6 +86,17 @@ function App() {
               <div className="primary">
                 {authState.status && <Link to="/"> Fils d'actualités</Link>}
               </div>{" "}
+              <div className="primary">
+                {authState.status && <Link to="/recherche2"> Recherche</Link>}
+              </div>
+              <div className="primary">
+                {authState.status && (
+                  <Link to={`/postpriv/${authState.id}`}>Posts Privés</Link>
+                )}
+                <Link to={`/profile/${authState.id}`}>
+                  {authState.username}
+                </Link>
+              </div>
             </div>{" "}
             {!authState.status && (
               <>
@@ -98,6 +114,7 @@ function App() {
           </div>{" "}
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/priv" exact component={Priv} />
             <Route path="/createpost" exact component={CreatePost} />
             <Route path="/post/:id" exact component={Post} />
             <Route path="/registration" exact component={Registration} />
@@ -105,6 +122,9 @@ function App() {
             <Route path="/profile/:id" exact component={Profile} />
             <Route path="/changepassword" exact component={ChangePassword} />
             <Route path="/delete" exact component={Delete} />
+            <Route path="/postpriv/:id" exact component={Postpriv} />
+            <Route path="/recherche2" exact component={Recherche} />
+            <Route path="/createpostpriv" exact component={Createpostpriv} />
             <Route path="*" exact component={PageNotFound} />
           </Switch>
         </Router>

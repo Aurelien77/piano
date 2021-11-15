@@ -10,6 +10,7 @@ router.get("/auth", validateToken, userCtrl.auth);
 router.post("/", userCtrl.signup);
 
 router.get("/basicinfo/:id", userCtrl.basicInfo);
+router.get("/postpriv/:id", userCtrl.postpriv);
 
 router.put("/changepassword", validateToken, userCtrl.changepassword);
 

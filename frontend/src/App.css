@@ -14,6 +14,9 @@ body {
   font-size: 20px;
   font-family: "Numans", sans-serif;
 }
+a:link {
+  text-decoration: none;
+}
 .basicinfo3 {
   width: 100%;
   height: 100%;
@@ -170,6 +173,7 @@ body {
   width: 100%;
   text-align: justify;
   white-space: normal;
+  padding: 1%;
 }
 .lien a {
   width: 100%;
@@ -351,7 +355,9 @@ body {
   justify-content: space-around;
   gap: 50px;
 }
-
+.color {
+  color: aliceblue;
+}
 .containerpost {
   display: flex;
   flex-direction: column-reverse;
@@ -380,7 +386,8 @@ body {
 
   box-shadow: rgba(15, 15, 12, 2) 0px 2px 8px 0px;
   border-radius: 15px;
-  background-image: url(./logos/icon.svg);
+  background-color: white;
+  /* background-image: url(./logos/icon.svg); */
 }
 
 .post:hover {
@@ -394,7 +401,7 @@ body {
   color: white;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 96%;
+  width: 100%;
   padding: 2%;
   box-shadow: rgba(13, 13, 14, 0.2) 0px 7px 29px 0px;
   font-size: 20px;
@@ -419,7 +426,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  width: 97.6%;
+  width: 100%;
 
   padding: 1%;
   align-items: center;

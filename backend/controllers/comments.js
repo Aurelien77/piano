@@ -1,12 +1,14 @@
 const { Comments } = require("../models");
 
 exports.postId = async (req, res) => {
+  //Retourne tous les résultats du commnetaire par posts
   const postId = req.params.postId;
   const comments = await Comments.findAll({ where: { PostId: postId } });
   res.json(comments);
 };
 
 exports.postid = async (req, res) => {
+  //créer le commentaire
   const comment = req.body;
   const username = req.user.username;
   comment.username = username;
@@ -15,6 +17,7 @@ exports.postid = async (req, res) => {
 };
 
 exports.commentId = async (req, res) => {
+  //supprimer le commentaire
   const commentId = req.params.commentId;
 
   await Comments.destroy({

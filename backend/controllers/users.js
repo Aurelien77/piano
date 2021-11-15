@@ -59,6 +59,15 @@ exports.basicInfo = async (req, res) => {
 
   res.json(basicInfo);
 };
+exports.postpriv = async (req, res) => {
+  const id2 = req.params.id;
+
+  const postpriv = await Users.findByPk(id2, {
+    attributes: { exclude: ["password"] },
+  });
+
+  res.json(postpriv);
+};
 
 exports.changepassword = async (req, res) => {
   const { oldPassword, newPassword } = req.body;

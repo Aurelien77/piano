@@ -41,6 +41,10 @@ app.use(
 // Routers
 const postRouter = require("./routes/Posts");
 app.use("/posts", helmet(), postRouter);
+
+const postRouter2 = require("./routes/Postspriv");
+app.use("/postspriv", helmet(), postRouter2);
+
 const commentsRouter = require("./routes/Comments");
 app.use("/comments", helmet(), commentsRouter);
 const usersRouter = require("./routes/Users");

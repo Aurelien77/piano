@@ -14,14 +14,16 @@ function Profile() {
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
+    axios.get(`http://localhost:3001/auth/postspriv/${id}`).then((response) => {
       setUsername(response.data.username);
       setphoto_profil(response.data.photo_profil);
     });
 
-    axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
-      setListOfPosts(response.data);
-    });
+    axios
+      .get(`http://localhost:3001/postspriv/byuserId/${id}`)
+      .then((response) => {
+        setListOfPosts(response.data);
+      });
   }, []);
   const mode = () => {
     window.location.reload(false);

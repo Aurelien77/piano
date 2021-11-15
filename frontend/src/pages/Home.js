@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [likedPosts, setLikedPosts] = useState([]);
@@ -68,10 +68,16 @@ function Home() {
   };
 
   return (
-    <div className="containerpost">
+    <div className="containerpost" id="lessonList">
       {listOfPosts.map((value, key) => {
         //Map argument de tableau
         return (
+          /*  <div class="row mb-3">
+          <div class="col">
+             <input class="form-control" id="searchInput" type="text" placeholder="Search..">
+          </div>
+       </div> */
+
           <div key={key} className="post">
             <div className="title"> {value.title} </div>
             <div

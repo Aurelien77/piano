@@ -5,25 +5,27 @@ import { AuthContext } from "../helpers/AuthContext";
 
 import LocalCafeIcon from "@material-ui/icons//LocalCafe";
 
-function Profile() {
+function Postpriv() {
   let { id } = useParams();
   let history = useHistory();
-  const [username, setUsername] = useState("");
-  const [photo_profil, setphoto_profil] = useState("");
-  const [listOfPosts, setListOfPosts] = useState([]);
+  const [username, setUsername2] = useState("");
+  const [photo_profil, setphoto_profil2] = useState("");
+  const [listOfPosts, setListOfPosts2] = useState([]);
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
-      setUsername(response.data.username);
-      setphoto_profil(response.data.photo_profil);
+    axios.get(`http://localhost:3001/auth/postpriv/${id}`).then((response) => {
+      setUsername2(response.data.username);
+      setphoto_profil2(response.data.photo_profil);
     });
 
-    axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
-      setListOfPosts(response.data);
-    });
+    axios
+      .get(`http://localhost:3001/posts/byuserIdpriv/${id}`)
+      .then((response) => {
+        setListOfPosts2(response.data);
+      });
   }, []);
-  const mode = () => {
+  const mode2 = () => {
     window.location.reload(false);
   };
 
@@ -32,7 +34,7 @@ function Profile() {
       <div className="modif">
         {" "}
         <span className="boutonmodif">
-          <button onClick={mode}>📑</button>
+          <button onClick={mode2}>📑</button>
         </span>
       </div>
       <div className="app3">
@@ -100,14 +102,13 @@ function Profile() {
                   {" "}
                   recherche
                 </button>
-
                 <button
                   onClick={() => {
-                    history.push("/priv");
+                    history.push("/createpostpriv");
                   }}
                 >
                   {" "}
-                  Voir les posts privés
+                  créer Publication privées
                 </button>
               </>
             )}
@@ -162,4 +163,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Postpriv;
