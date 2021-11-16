@@ -30,24 +30,24 @@ function Postpriv() {
   };
 
   return (
-    <div className="flexgobal">
+    <div className="flexgobal2">
       <div className="modif">
         {" "}
         <span className="boutonmodif">
           <button onClick={mode2}>📑</button>
         </span>
       </div>
-      <div className="app3">
+      <div className="app4">
         <div className="">
-          <div className="basicinfo3">
+          <h1> Page de profil de : {username} </h1>
+          <div className="profil">
+            <img
+              src={"http://localhost:3001/images/" + photo_profil}
+              alt="profil"
+            />{" "}
+          </div>
+          <div className="basicinfo4">
             {" "}
-            <h1> Page de profil de : {username} </h1>
-            <div className="profil">
-              <img
-                src={"http://localhost:3001/images/" + photo_profil}
-                alt="profil"
-              />{" "}
-            </div>
             {(authState.username === username || authState.admin === true) && (
               <>
                 <button
@@ -115,15 +115,15 @@ function Postpriv() {
           </div>{" "}
         </div>
 
-        <div className="listOfPosts">
+        <div className="listOfPosts3">
           {listOfPosts.map((value, key) => {
             return (
-              <div key={key} className="post">
+              <div key={key} className="postpriv">
                 <div className="title"> {value.title} </div>
                 <div
                   className="body"
                   onClick={() => {
-                    history.push(`/post/${value.id}`);
+                    history.push(`/postrpiv/${value.id}`);
                   }}
                 >
                   {value.postText}
@@ -131,7 +131,7 @@ function Postpriv() {
                 <div className="lien">
                   <iframe
                     width="100%"
-                    height="200"
+                    height="600"
                     src={value.lien}
                     frameborder="0"
                     allowfullscreen
@@ -144,15 +144,15 @@ function Postpriv() {
                 </div>
                 <div className="footer">
                   <div className="username">{value.username}</div>
-
+                  {/* 
                   <div className="buttons">
                     <div className="cofee">
                       {" "}
                       <LocalCafeIcon />
                     </div>
 
-                    <label> {value.Likes.length}</label>
-                  </div>
+                    {/*     <label> {value.Likes.length}</label> }
+                  </div> */}
                 </div>
               </div>
             );

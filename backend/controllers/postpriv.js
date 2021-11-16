@@ -26,6 +26,12 @@ exports.id = async (req, res) => {
   res.json(post);
 };
 
+exports.id2 = async (req, res) => {
+  const id = req.params.id;
+  const post = await Posts2.findByPk(id);
+  res.json(post);
+};
+
 exports.userid = async (req, res) => {
   const id = req.params.id;
   const listOfPosts = await Posts2.findAll({

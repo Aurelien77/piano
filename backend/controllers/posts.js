@@ -26,6 +26,17 @@ exports.id = async (req, res) => {
   res.json(post);
 };
 
+exports.id2 = async (req, res) => {
+  const id = req.params.id;
+  const post = await Posts2.findByPk(id);
+  res.json(post);
+};
+/* exports.idpriv = async (req, res) => {
+  const id = req.params.id;
+  const post = await Posts2.findByPk(id);
+  res.json(post);
+}; */
+
 exports.userid = async (req, res) => {
   const id = req.params.id;
   const listOfPosts = await Posts.findAll({
@@ -37,11 +48,11 @@ exports.userid = async (req, res) => {
 
 exports.useridpriv = async (req, res) => {
   const id2 = req.params.id;
-  const listOfPosts2 = await Posts2.findAll({
+  const listOfPosts = await Posts2.findAll({
     where: { UserId: id2 },
     include: [Likes],
   });
-  res.json(listOfPosts2);
+  res.json(listOfPosts);
 };
 
 exports.title = async (req, res) => {

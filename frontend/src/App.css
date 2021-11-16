@@ -7,13 +7,25 @@
 } */
 
 body {
-  background-color: black;
   margin: 0px;
   width: 100%;
   font-weight: 500;
   font-size: 20px;
   font-family: "Numans", sans-serif;
+  background-color: black;
 }
+.background {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: 100%;
+  /*   background-size: cover; */
+}
+
 a:link {
   text-decoration: none;
 }
@@ -21,6 +33,15 @@ a:link {
   width: 100%;
   height: 100%;
   padding-left: 10%;
+  /*   background-size: cover;
+  background: no-repeat, url(./logos/orig.gif); */
+}
+
+.basicinfo4 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
   /*   background-size: cover;
   background: no-repeat, url(./logos/orig.gif); */
 }
@@ -124,9 +145,9 @@ a:link {
   grid-template-columns: repeat(3, 1fr);
 
   grid-auto-rows: minmax(100px, auto);
-
+  background-color: black;
   background-size: cover;
-  background-image: url(./logos/ville.jpg);
+  /*  background-image: url(./logos/ville.jpg); */
   background-repeat: repeat;
   display: flex;
 }
@@ -320,7 +341,9 @@ a:link {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: repeat, url(./logos/orig.gif);
+  background-size: 100%;
+  /*   background-size: cover; */
+  background: no-repeat, url(./logos/lune.gif), url(./logos/ville.jpg);
 }
 
 .app3 {
@@ -330,15 +353,17 @@ a:link {
   align-items: center;
   gap: 150px;
   background-repeat: repeat;
+  background-size: cover;
+  background-color: black;
+  background: no-repeat, url(./logos/lune.gif);
 }
 
 .App4 {
   width: 100%;
-  height: 1000px;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: repeat, url(./logos/orig.gif);
 }
 
 .App5 {
@@ -354,6 +379,7 @@ a:link {
   flex-direction: row;
   justify-content: space-around;
   gap: 50px;
+  background-color: black;
 }
 .color {
   color: aliceblue;
@@ -388,6 +414,74 @@ a:link {
   border-radius: 15px;
   background-color: white;
   /* background-image: url(./logos/icon.svg); */
+}
+
+.postpriv {
+  display: flex;
+  width: 60%;
+  height: 100%;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2%;
+  border: 1px solid #d1515a;
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-shadow: rgba(15, 15, 12, 2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  background-color: white;
+  /* background-image: url(./logos/icon.svg); */
+}
+
+.postpriv:hover {
+  box-shadow: rgba(248, 248, 250, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.postpriv .title {
+  background-color: #122441;
+  display: flex;
+  place-content: center;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  padding: 2%;
+  box-shadow: rgba(13, 13, 14, 0.2) 0px 7px 29px 0px;
+  font-size: 20px;
+}
+
+.postpriv .body {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  white-space: normal;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2%;
+  font-weight: 500;
+  background-color: #f7fdfd;
+  color: black;
+  white-space: pre-line;
+}
+
+.postpriv .footer {
+  /* border-top: 1px solid #d1515a; */
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  padding: 1%;
+  align-items: center;
+  padding-left: 15px;
+  background-color: #122441;
+  color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .post:hover {
@@ -470,6 +564,23 @@ a:link {
   justify-items: center;
   align-content: center;
   align-items: center;
+}
+
+.listOfPost2 {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  background-color: #0a0a0a;
+}
+
+.listOfPost3 {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  background-color: #0a0a0a;
+  width: 100%;
 }
 /* création de post css */
 
@@ -995,6 +1106,7 @@ button:hover {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #0a0a0a;
   }
 
   .app3 {
@@ -1093,7 +1205,7 @@ button:hover {
     display: flex;
     align-content: center;
     justify-content: center;
-
+    align-items: center;
     /* align-items: center; */
     width: 100%;
     height: 100%;
