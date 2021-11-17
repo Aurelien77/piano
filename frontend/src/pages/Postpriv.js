@@ -51,21 +51,15 @@ function Postpriv() {
             {(authState.username === username || authState.admin === true) && (
               <>
                 <button
+                  className="mdp"
                   onClick={() => {
                     history.push("/changepassword");
                   }}
                 >
                   {" "}
-                  Posts Privés
-                </button>
-                <button
-                  onClick={() => {
-                    history.push("#");
-                  }}
-                >
-                  {" "}
                   Changer mon mots de passe
                 </button>
+
                 <form
                   action={"http://localhost:3001/upload/" + id}
                   method="POST"
@@ -84,32 +78,31 @@ function Postpriv() {
                     Soumêtre l'image
                   </button>
                 </form>
-
                 <button
+                  className="supprimer"
                   onClick={() => {
                     history.push("/delete");
                   }}
                 >
                   {" "}
-                  Supprimer le compte
+                  X Supprimer le compte
                 </button>
-
-                <button
+                {/*    <button
                   onClick={() => {
                     history.push("/Recherche");
                   }}
                 >
                   {" "}
                   recherche
-                </button>
-                <button
+                </button> */}
+                {/*         <button
                   onClick={() => {
                     history.push("/createpostpriv");
                   }}
                 >
                   {" "}
                   créer Publication privées
-                </button>
+                </button> */}
               </>
             )}
           </div>{" "}

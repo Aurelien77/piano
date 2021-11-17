@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-import logo from "../logos/icon-above-font.svg";
+import logo from "../logos/piano.gif";
 function Login() {
   const [username, setUsername] = useState("");
   const [email, setemail] = useState("");
@@ -40,7 +40,7 @@ function Login() {
           type="text"
           onChange={(event) => {
             setemail(event.target.value);
-            setUsername("Bienvenue🎹");
+            setUsername("Profil 🎹");
           }}
         />
 

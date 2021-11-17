@@ -59,7 +59,7 @@ function App() {
   };
 
   return (
-    <div className="App2 ">
+    <div className="App2">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
           <div className="flex3">
@@ -70,33 +70,33 @@ function App() {
                 </Link>
               </h1>{" "}
             </div>{" "}
-            <div className="deco">
-              {authState.status && (
-                <button onClick={logout}> Déconnexion</button>
-              )}{" "}
-            </div>{" "}
             <div className="principal">
               <div className="primary">
                 {authState.status && (
-                  <Link to="/createpost"> Créer un Post Public</Link>
+                  <Link to="/createpost"> 🎵Créer un Post Public</Link>
                 )}
               </div>
               <div className="primary">
-                {authState.status && <Link to="/"> Fils d'actualités</Link>}
+                {authState.status && <Link to="/"> ✨Fils d'actualités</Link>}
               </div>{" "}
               <div className="primary">
-                {authState.status && <Link to="/recherche2"> Recherche</Link>}
+                {authState.status && (
+                  <Link to="/createpostpriv">🎶 Créer un Post Privé</Link>
+                )}
               </div>
               <div className="primary">
                 {authState.status && (
-                  <Link to={`/postpriv/${authState.id}`}>Posts Privés</Link>
+                  <Link to={`/postpriv/${authState.id}`}>
+                    🎼Mes Posts Privés
+                  </Link>
                 )}
-
-                <Link to={`/profile/${authState.id}`}>
-                  {authState.username}
-                </Link>
               </div>
             </div>{" "}
+            <div className="deco">
+              {authState.status && (
+                <button onClick={logout}>⚪Déconnexion</button>
+              )}{" "}
+            </div>
             {!authState.status && (
               <>
                 {" "}

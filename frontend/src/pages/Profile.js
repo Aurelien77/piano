@@ -35,6 +35,14 @@ function Profile() {
           <button onClick={mode}>📑</button>
         </span>
       </div>
+      {/*    <button
+        onClick={() => {
+          history.push("/createpostpriv");
+        }}
+      >
+        {" "}
+        créer Publication privées
+      </button> */}
       <div className="app3">
         <div className="">
           <div className="basicinfo3">
@@ -48,14 +56,6 @@ function Profile() {
             </div>
             {(authState.username === username || authState.admin === true) && (
               <>
-                <button
-                  onClick={() => {
-                    history.push("/changepassword");
-                  }}
-                >
-                  {" "}
-                  Posts Privés
-                </button>
                 <button
                   onClick={() => {
                     history.push("#");
@@ -90,24 +90,6 @@ function Profile() {
                 >
                   {" "}
                   Supprimer le compte
-                </button>
-
-                <button
-                  onClick={() => {
-                    history.push("/Recherche");
-                  }}
-                >
-                  {" "}
-                  recherche
-                </button>
-
-                <button
-                  onClick={() => {
-                    history.push("/priv");
-                  }}
-                >
-                  {" "}
-                  Voir les posts privés
                 </button>
               </>
             )}
