@@ -16,7 +16,11 @@ body {
   font-family: "Numans", sans-serif;
   background-color: black;
 }
-
+.flexifra {
+  background-color: black;
+  display: flex;
+  size-adjust: 100%;
+}
 .background {
   background-color: black;
   width: 100%;
@@ -219,6 +223,8 @@ a:link {
   text-align: justify;
   white-space: normal;
   padding: 1%;
+  background-size: cover;
+  background-size: 100%;
 }
 .lien a {
   width: 100%;
@@ -462,7 +468,7 @@ a:link {
 
 .postpriv {
   display: flex;
-
+  width: 70%;
   height: 100%;
   border-radius: 10px;
   flex-direction: column;
@@ -620,11 +626,11 @@ a:link {
 
 .listOfPost3 {
   display: flex;
-
+  flex-direction: column-reverse;
   justify-content: center;
   align-content: center;
   align-items: center;
-
+  background-color: brown;
   width: 100%;
 }
 /* création de post css */
@@ -844,7 +850,7 @@ h1 {
   justify-content: center;
   color: white;
   text-shadow: 0 0 3px #d1515a, 0 0 7px black;
-  padding-right: 30%;
+  margin-bottom: 5%;
   font-size: 30px;
 }
 h3 {
@@ -1148,7 +1154,7 @@ button:hover {
     height: 1000px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     background-color: #0a0a0a;
   }
 

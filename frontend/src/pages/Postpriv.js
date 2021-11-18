@@ -107,8 +107,7 @@ function Postpriv() {
             )}
           </div>{" "}
         </div>
-
-        <div className="listOfPosts3">
+        <div className="containerpost">
           {listOfPosts.map((value, key) => {
             return (
               <div key={key} className="postpriv">
@@ -121,13 +120,20 @@ function Postpriv() {
                 >
                   {value.postText}
                 </div>
+
                 <div className="lien">
                   <iframe
+                    className="flexifra"
                     width="100%"
                     height="600"
                     src={value.lien}
                     frameborder="0"
-                    allowfullscreen
+                    allow="fullscreen"
+                    loading="lazy"
+                    margin="auto"
+
+                    /*   sandbox="allow-scripts" */
+                    /*  sandbox="allow-downloads" */
                   ></iframe>
 
                   {/*  <iframe src={value.lien}></iframe> */}
@@ -136,7 +142,10 @@ function Postpriv() {
                   </a>
                 </div>
                 <div className="footer">
-                  <div className="username">{value.username}</div>
+                  <div className="username">
+                    Créé par <span className="speudo">{value.username} </span>{" "}
+                    le : {value.createdAt}{" "}
+                  </div>
                   {/* 
                   <div className="buttons">
                     <div className="cofee">

@@ -125,7 +125,7 @@ function Profile() {
                 </div>
                 <div className="footer">
                   <div className="username">{value.username}</div>
-
+                  {value.createdAT}
                   <div className="buttons">
                     <div className="cofee">
                       {" "}
