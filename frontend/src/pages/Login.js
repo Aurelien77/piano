@@ -40,7 +40,7 @@ function Login() {
           type="text"
           onChange={(event) => {
             setemail(event.target.value);
-            setUsername("Profil 🎹");
+            setUsername("Profil  🎹");
           }}
         />
 
